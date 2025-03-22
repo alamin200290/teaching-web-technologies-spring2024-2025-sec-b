@@ -1,0 +1,76 @@
+
+<html lang="en">
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+    <h1 id="head">JS Example</h1>
+    
+    <form method="" action="" onsubmit="return test()">
+        <input type="text" id="username" name="username" value="" onblur="test()"/>
+        <input type="submit" name="button" id="button" value="Submit" />
+    </form>
+
+    <p id="msg"></p>
+
+
+    <script>
+        //name = 'alamin'; 
+        //var name = 'alamin';
+        let name = 'alamin';
+
+        let std = [1, 'alamin', 2.5, 'alamin@aiub.edu'];
+        std[0];
+
+        function abc(a, b){
+            return a+b;
+        }
+       //let sum = abc(20,30);
+
+       let f1 = function(a, b){
+        return a+b;
+       }
+       //let sum = f1(10,20);
+
+       let f2 = (a,b)=>a+b;
+       //let sum = f2(20,30);
+
+    //    if(){
+
+    //    }else{
+
+    //    }
+
+    // for(let i=0; i<10; i++){
+
+    // }
+
+    //console.log('test');
+    //alert('test');
+    //document.write('TEST from JS');
+    //let head = document.getElementsByTagName('h1')[0];
+    
+
+    function change(){
+        let head = document.getElementById('head');
+        head.innerHTML = "TEST from JS";
+    }
+
+    function test(){
+        let username = document.getElementById('username').value;
+        let msg = document.getElementById('msg');
+
+        if(username == ""){
+            msg.innerHTML = "please type username first!";
+            msg.style.color = 'red';
+            return false;
+        }else {
+            document.getElementById('head').innerHTML = username;
+            msg.innerHTML = "";
+            return true;
+        }
+    }
+
+    </script>
+</body>
+</html>
