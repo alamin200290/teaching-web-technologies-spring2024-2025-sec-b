@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL)
+    require_once('../model/userModel.php');
     session_start();
     if(isset($_POST['submit'])){
         $username = trim($_POST['username']);
@@ -6,13 +8,15 @@
 
         if($username == "" || $password == ""){
             echo "null username/password!";
-        }else if($username == $password){
-            //echo "valid user!";
-            //$_SESSION['status'] = true;
-            setcookie('status', 'true', time()+3000, '/');
-            header('location: ../view/home.php');
-        }else{
-            echo "invalid user!";
+        }else{ 
+            $user = ['username'=> $username, 'password'=>$password];
+            $status = login($user);
+            if($status){
+                setcookie('status', 'true', time()+3000, '/');
+                header('location: ../view/home.php');
+            }else{
+                header('location: ../view/login.html');
+            }
         }
     }else{
         //echo "Invalid request! Please submit form!";
