@@ -1,5 +1,5 @@
 <?php
-    error_reporting(E_ALL)
+    error_reporting(E_ALL);
     require_once('../model/userModel.php');
     session_start();
     if(isset($_POST['submit'])){

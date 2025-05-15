@@ -1,5 +1,5 @@
 <?php
-    error_reporting(E_ALL)
+    error_reporting(E_ALL);
     $host = "127.0.0.1";
     $dbuser = "root";
     $dbpass = "";
@@ -10,7 +10,7 @@
         global $dbpass;
         global $dbuser;
 
-        $con = mysqli_connect($GLOBALS['host'], $dbuser, $dbpass, $dbname):
+        $con = mysqli_connect($GLOBALS['host'], $dbuser, $dbpass, $dbname);
         return $con;
     }
 
